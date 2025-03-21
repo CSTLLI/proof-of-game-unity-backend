@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "4cb3f2e4-cfef-4154-9fd9-f05b5a995516",
+		"name": "ProofOfGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25928699"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"cstlli\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"cstlli11\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "Post a feedback",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playerId\": 6,\r\n    \"comment\": \"Great app!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/feedback",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the last feedback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playerId\": 6,\r\n    \"comment\": \"Great app!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/feedback/last/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"feedback",
+								"last",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update feedback",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"Updated feedback - I love this game!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/feedback/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"feedback",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Get stats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3367/api/players/stats",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"players",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "Start a game session",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 6,\r\n    \"scenarioName\": \"Maintenance Moteur F1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/games/start",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"games",
+								"start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete a game session",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gameId\": 1,\r\n    \"userId\": 6,\r\n    \"completed\": true,\r\n    \"completedTasks\": 7,\r\n    \"totalTasks\": 7,\r\n    \"timeTaken\": 345.5,\r\n    \"riskLevel\": 25.5,\r\n    \"blockchainMode\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/games/complete",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"games",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get game history",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3367/api/games/history/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"games",
+								"history",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Upgrade subscription",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 6,\r\n    \"subscriptionType\": \"monthly\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3367/api/subscriptions/upgrade",
+							"host": [
+								"localhost"
+							],
+							"port": "3367",
+							"path": [
+								"api",
+								"subscriptions",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
