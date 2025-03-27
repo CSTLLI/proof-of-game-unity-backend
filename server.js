@@ -68,14 +68,14 @@ app.post("/api/auth/register", async (req, res) => {
                 }
 
                 // Initialize player stats
-                const initStats =
-                    "INSERT INTO player_stats (player_id, games_played, wins, losses, score) VALUES (?, 0, 0, 0, 0)";
-                db.query(initStats, [result.insertId], (err) => {
-                    if (err) {
-                        console.error("Error initializing player stats:", err);
-                        // Note: User is still created even if stats initialization fails
-                    }
-                });
+                // const initStats =
+                //     "INSERT INTO player_stats (player_id, games_played, wins, losses, score) VALUES (?, 0, 0, 0, 0)";
+                // db.query(initStats, [result.insertId], (err) => {
+                //     if (err) {
+                //         console.error("Error initializing player stats:", err);
+                //         // Note: User is still created even if stats initialization fails
+                //     }
+                // });
 
                 res.status(201).json({
                     success: true,
